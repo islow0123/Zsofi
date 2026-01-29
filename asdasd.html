@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szeretlek</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f8cdda, #e0c3fc); /* lilás-rózsaszín */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            max-width: 90%;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 50px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 25px;
+            cursor: pointer;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff4b5c, #ff6f61);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff6f61, #ff4b5c);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="c:\Users\elfog\Desktop\asdyxc\giphy.gif" alt="GIF vagy kép">
+
+    <h1>Leszel a valentinom? ❤</h1>
+
+    <div class="buttons">
+        <button id="yes">Igen</button>
+        <button id="no">Nem</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yes");
+        const noBtn = document.getElementById("no");
+
+        // Igen → átirányítás
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "love.html";
+        });
+
+        // Nem → teleportál
+        noBtn.addEventListener("mouseover", () => {
+            const maxX = window.innerWidth - noBtn.offsetWidth;
+            const maxY = window.innerHeight - noBtn.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+
+</body>
+</html>
